@@ -174,7 +174,8 @@ Only include values you can verify.
 - Architecture: Monorepo + Multi-service + Multi-tenant
 - Implemented Modules: 20+
 - Authentication Methods: 3+
-- Production-ready Services: [update]
+- Backend .NET projects (\*.csproj): 14
+- Frontend package projects (frontend/packages/\*): 6
 
 ## Engineering Journal
 
