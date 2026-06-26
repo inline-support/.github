@@ -190,8 +190,6 @@ This organization will publish architecture notes and technical write-ups, for e
 
 ## Contact
 
-For collaboration, architecture discussions, or technical interviews:
-
 - LinkedIn: [Dzmitry Dym](https://www.linkedin.com/in/dzmitry-dym/)
 
 ## Project Dependency Diagrams
