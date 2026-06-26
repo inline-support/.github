@@ -191,4 +191,4 @@ This organization will publish architecture notes and technical write-ups, for e
 
 For collaboration, architecture discussions, or technical interviews:
 
-- LinkedIn: [\[your-linkedin\]](https://www.linkedin.com/in/dzmitry-dym/)
+- LinkedIn: [Dzmitry Dym](https://www.linkedin.com/in/dzmitry-dym/)
