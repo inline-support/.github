@@ -193,3 +193,144 @@ This organization will publish architecture notes and technical write-ups, for e
 For collaboration, architecture discussions, or technical interviews:
 
 - LinkedIn: [Dzmitry Dym](https://www.linkedin.com/in/dzmitry-dym/)
+
+## Project Dependency Diagrams
+
+These diagrams reflect compile-time references from backend `.csproj` (`ProjectReference`).
+Arrows are project dependencies, not runtime network calls.
+
+### Frontend Packages (Context)
+
+```mermaid
+flowchart LR
+  fewidget[widget]
+  feworkspace[workspace]
+  feadminpanel[admin panel]
+
+  fewidget --> bewidgetapi[widget api]
+  feworkspace --> bemainapi[main api]
+  feadminpanel --> beadminapi[admin api]
+```
+
+### Backend Projects (Per Project)
+
+#### main api
+
+```mermaid
+flowchart LR
+  mainapi[main api] --> core[core]
+  mainapi --> database[database]
+  mainapi --> utils[utils]
+```
+
+#### auth api
+
+```mermaid
+flowchart LR
+  authapi[auth api] --> core[core]
+  authapi --> database[database]
+  authapi --> utils[utils]
+```
+
+#### admin api
+
+```mermaid
+flowchart LR
+  adminapi[admin api] --> core[core]
+  adminapi --> database[database]
+  adminapi --> utils[utils]
+```
+
+#### search api
+
+```mermaid
+flowchart LR
+  searchapi[search api] --> core[core]
+  searchapi --> database[database]
+  searchapi --> utils[utils]
+```
+
+#### widget api
+
+```mermaid
+flowchart LR
+  widgetapi[widget api] --> core[core]
+  widgetapi --> database[database]
+  widgetapi --> utils[utils]
+```
+
+#### licensing api
+
+```mermaid
+flowchart LR
+  licensingapi[licensing api] --> core[core]
+  licensingapi --> database[database]
+  licensingapi --> utils[utils]
+```
+
+#### cleaner api
+
+```mermaid
+flowchart LR
+  cleanerapi[cleaner api] --> core[core]
+  cleanerapi --> utils[utils]
+```
+
+#### radio api
+
+```mermaid
+flowchart LR
+  radioapi[radio api] --> core[core]
+  radioapi --> utils[utils]
+```
+
+#### core
+
+```mermaid
+flowchart LR
+  core[core] --> analyticsdb[analytics db]
+  core --> databasedb[database db]
+  core --> data[data]
+  core --> utils[utils]
+```
+
+#### database db
+
+```mermaid
+flowchart LR
+  databasedb[database db] --> data[data]
+  databasedb --> utils[utils]
+```
+
+#### analytics db
+
+```mermaid
+flowchart LR
+  analyticsdb[analytics db] --> data[data]
+  analyticsdb --> utils[utils]
+```
+
+#### data
+
+```mermaid
+flowchart LR
+  data[data] --> utils[utils]
+```
+
+#### utils
+
+```mermaid
+flowchart LR
+  mainapi[main api] --> utils[utils]
+  authapi[auth api] --> utils
+  adminapi[admin api] --> utils
+  searchapi[search api] --> utils
+  widgetapi[widget api] --> utils
+  licensingapi[licensing api] --> utils
+  cleanerapi[cleaner api] --> utils
+  radioapi[radio api] --> utils
+  core[core] --> utils
+  databasedb[database db] --> utils
+  analyticsdb[analytics db] --> utils
+  data[data] --> utils
+```
